@@ -45,10 +45,6 @@ solid floats
 
 Version 0.01
 
-=cut
-
-
-
 =head1 SYNOPSIS
 
   package Event;
@@ -61,9 +57,24 @@ Version 0.01
 
 =head1 DESCRIPTION
 
+This module causes 'decimal' type columns in your database to automatically wrap
+their values with Math::BigFloat. This solves most errors that occur due to
+floating point arithmatic upon these values. Keep in mind that while this fixes
+the values sourced from the db, you must still clean any values from other
+sources (e.g. read from files) manually if you want to be confident that your
+calculations are accurate.
 
 =head2 register_column
 
+Chains with the L<DBIx::Class::Row/register_column> method, and sets
+up datetime columns appropriately.  This would not normally be
+directly called by end users.
+
+=head1 SEE ALSO
+
+L<Math::BigFloat>,
+L<DBIx::Class>,
+L<DBIx::Class::InflateColumn>.
 
 =head1 AUTHOR
 
@@ -77,3 +88,4 @@ Copyright 2011 Christopher Mckay.
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.8 or,
 at your option, any later version of Perl 5 you may have available.
+
