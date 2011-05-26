@@ -1,5 +1,7 @@
 Revision history for DBIx-Class-InflateColumn-BigFloat
 
 {{$NEXT}}
+
+0.01  2011-05-26
         - First version, released on an unsuspecting world.
 
